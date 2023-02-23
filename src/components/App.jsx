@@ -8,8 +8,6 @@ import friends from 'data/friends';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import transactions from 'data/transactions';
 
-// console.log(transactions);
-
 export const App = () => {
   return (
     <div className={css.container}>
