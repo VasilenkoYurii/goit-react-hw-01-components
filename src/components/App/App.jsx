@@ -1,16 +1,17 @@
-import css from 'components/App.module.css';
+// import css from 'components/App/App.module.css';
+import { Container } from 'components/App/App.styled';
 import Profile from 'components/Profile/Profile';
 import users from 'data/user';
 import Statistics from 'components/Statistics/Statistics';
 import data from 'data/data';
 import FriendList from 'components/FriendList/FriendList';
 import friends from 'data/friends';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
+import TransactionHistory from 'components/TransactionHistory/TransactionHistory';
 import transactions from 'data/transactions';
 
 export const App = () => {
   return (
-    <div className={css.container}>
+    <Container>
       <Profile
         username={users.username}
         tag={users.tag}
@@ -21,6 +22,6 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </div>
+    </Container>
   );
 };
