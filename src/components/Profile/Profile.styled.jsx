@@ -65,7 +65,13 @@ export const StatsItem = styled.li`
   padding: 10px;
 
   box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%);
-  border-radius: 0 0 5px 5px;
+
+  &:nth-of-type(1) {
+    border-radius: 0 0 0 5px;
+  }
+  &:nth-of-type(3) {
+    border-radius: 0 0 5px 0;
+  }
 `;
 
 export const StatsLabel = styled.span`
