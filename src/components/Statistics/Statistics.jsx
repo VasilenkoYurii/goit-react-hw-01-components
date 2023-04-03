@@ -15,10 +15,10 @@ const Statistics = ({ title, stats }) => {
       {title && <StatisticsTitle>{title}</StatisticsTitle>}
 
       <StatList>
-        {stats.map(stat => (
-          <ListItem key={stat.id}>
-            <ListItemLabel>{stat.label}</ListItemLabel>
-            <ListItemPercentage>{stat.percentage}%</ListItemPercentage>
+        {stats.map(({ id, label, percentage }) => (
+          <ListItem key={id}>
+            <ListItemLabel>{label}</ListItemLabel>
+            <ListItemPercentage>{percentage}%</ListItemPercentage>
           </ListItem>
         ))}
       </StatList>
@@ -28,13 +28,13 @@ const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stat: PropTypes.arrayOf(
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
-      percentage: PropTypes.string.isRequired,
-    })
-  ),
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Statistics;
